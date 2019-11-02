@@ -39,6 +39,7 @@ routes() do
     plug(Plug.Static, at="/static", from=normpath(@__DIR__, "../static"))
 end
 
+using Sockets
 if haskey(ENV, "ON_HEROKU")
     Bukdu.start(parse(Int, ENV["PORT"]); host=ip"0.0.0.0")
 else
