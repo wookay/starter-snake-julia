@@ -9,6 +9,11 @@ Visit [https://github.com/battlesnakeio/community/blob/master/starter-snakes.md]
 
   * Demo site: [https://bukdu-snake.herokuapp.com/](https://bukdu-snake.herokuapp.com/)
 
+```
+curl -XPOST -H 'Content-Type: application/json' https://bukdu-snake.herokuapp.com/start
+curl -XPOST -H 'Content-Type: application/json' -d '{ "move": "left"}' https://bukdu-snake.herokuapp.com/move
+```
+
   * Heroku: Add a buildpack on **Settings** -> **Add buildpack**
     - [https://github.com/wookay/heroku-buildpack-julia-13](https://github.com/wookay/heroku-buildpack-julia-13)
 
@@ -24,12 +29,18 @@ https://github.com/wookay/heroku-buildpack-julia-13
 
 # Test on local
 
+ * add [Bukdu.jl](https://github.com/wookay/Bukdu.jl)
 ```
-$ julia package.jl
-$ julia app/main.jl
+~/work/starter-snake-julia $ julia package.jl
+```
+
+ * run server
+```
+~/work/starter-snake-julia $ julia app/main.jl
 Bukdu Listening on 127.0.0.1:8080
 ```
 
+ * curl
 ```
 $ curl -XPOST -H 'Content-Type: application/json' localhost:8080/ping
 ok
