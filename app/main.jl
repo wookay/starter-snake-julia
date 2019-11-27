@@ -4,7 +4,8 @@ struct SnakeController <: ApplicationController
     conn::Conn
 end
 
-function index(::SnakeController)
+function index(c::SnakeController)
+    @info :c c.conn.remote_ip
     render(HTML, """
     Battlesnake documentation can be found at <a href="https://docs.battlesnake.io">https://docs.battlesnake.io</a>.
     """)

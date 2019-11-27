@@ -1,3 +1,4 @@
 using Pkg
-pkg"add Bukdu"
+pkg"dev Bukdu"
 using Bukdu
+
